@@ -84,7 +84,7 @@
      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
   <!--   <li class="breadcrumb-item"><a id="anchor" href="#"><small>Home</small></a></li> -->
-    <li class="breadcrumb-item active" aria-current="page"><small>Homee</small></li>
+    <li class="breadcrumb-item active" aria-current="page"><small>Home</small></li>
   </ol>
 </nav>
 
@@ -300,7 +300,7 @@ $date=strtotime($date);
     </div>
 
      <div class="col-md-3">
-        <a id="anchor" href="r/tripura"><h4 class="text-danger mb-4">Tripra</h4></a>
+        <a id="anchor" href="r/tripura"><h4 class="text-danger mb-4">Tripura</h4></a>
 
     @foreach($tripura as $as)
 
