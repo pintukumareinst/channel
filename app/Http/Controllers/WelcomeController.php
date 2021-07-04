@@ -16,7 +16,7 @@ class WelcomeController extends Controller
     { 
 
             $banner = banner::where('status','Active')->limit(1)->get();
-               $images = images::orderBy('id','DESC')->get();
+               $images = images::orderBy('id','DESC')->limit(3)->get();
 
         $assam = posts::where('region','Assam')->orderBy('id','DESC')->limit(4)->get();
         $arunachal = posts::where('region','Arunachal Pradesh')->orderBy('id','DESC')->limit(4)->get();
@@ -32,7 +32,7 @@ class WelcomeController extends Controller
  
       public function news($slug)
     {
-             $images = images::orderBy('id','DESC')->get();
+             $images = images::orderBy('id','DESC')->limit(3)->get();
          $banner = banner::where('status','Active')->limit(1)->get();
 
         $news = posts::where('slug',$slug)->limit(1)->get();
@@ -43,7 +43,7 @@ class WelcomeController extends Controller
 
        public function readersnews($slug)
     {
-             $images = images::orderBy('id','DESC')->get();
+             $images = images::orderBy('id','DESC')->limit(3)->get();
          $banner = banner::where('status','Active')->limit(1)->get();
 
         $news = readers::where('slug',$slug)->limit(1)->get();
@@ -53,7 +53,7 @@ class WelcomeController extends Controller
 
      public function region($region)
     {
-             $images = images::orderBy('id','DESC')->get();
+             $images = images::orderBy('id','DESC')->limit(3)->get();
          $banner = banner::where('status','Active')->limit(1)->get();
 
         if($region=='arunachal-pradesh')
@@ -84,7 +84,7 @@ class WelcomeController extends Controller
 
      public function category($region)
     {
-              $images = images::orderBy('id','DESC')->get();
+              $images = images::orderBy('id','DESC')->limit(3)->get();
         if($region=='sports')
             $region='Sports';
         else if($region=='entertainment')
@@ -100,7 +100,7 @@ class WelcomeController extends Controller
 
       public function allnews()
     {
-             $images = images::orderBy('id','DESC')->get();
+             $images = images::orderBy('id','DESC')->limit(3)->get();
          $banner = banner::where('status','Active')->limit(1)->get();
 
         $assam = posts::orderBy('id','DESC')->paginate(12);
@@ -109,7 +109,7 @@ class WelcomeController extends Controller
     }
        public function readers()
     {
-             $images = images::orderBy('id','DESC')->get();
+             $images = images::orderBy('id','DESC')->limit(3)->get();
          $banner = banner::where('status','Active')->limit(1)->get();
 
         $assam = readers::orderBy('id','DESC')->paginate(12);
